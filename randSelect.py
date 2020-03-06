@@ -22,7 +22,7 @@ def randSelect(ray, index):
     if index < 0 or index > ray_len - 1:
         raise ValueError("invalid index value!")
     # brute force
-    elif ray_len < 5:
+    elif ray_len <= 5:
         for i in range(ray_len):
             # bubbling biggest of 0 to i-th at i
             for j in range(i):
@@ -46,7 +46,7 @@ def randSelect(ray, index):
         right = ray_len - 1
         # no cross
         while left < right:
-            while ray[left] < pivot:
+            while ray[left] <= pivot:
                 if left == ray_len - 1:
                     break
                 else:
